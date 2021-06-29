@@ -26,14 +26,13 @@ body {
 }
 .container {
   width: 800px;
-  @include display-flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  height: 600px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px 3px;
 }
 .boxes {
-  width: 170px;
-  height: 170px;
-  margin: 2px;
   background-image: url("/images/valorant.png");
   background-position: center 0;
   background-size: auto 100%;
@@ -58,15 +57,4 @@ body {
   background-position: center;
   background-size: 100% 100%;
   transform: rotatey(180deg);
-}
-
-@media screen and (max-width: 617px) {
-  .container {
-    width: 100%;
-  }
-  .boxes {
-    width: 120px;
-    height: 170px;
-    background-size: cover 100%;
-  }
 }
