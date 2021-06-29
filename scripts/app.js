@@ -95,13 +95,12 @@ function getScore() {
     e.preventDefault();
     message.style.transform = 'translateY(500px) scale(0)';
     setTimeout(() => {
+      scoreCard.classList.toggle('visible');
       location.reload();
-      setTimeout(() => scoreCard.classList.toggle('visible'), 100);
-    }, 800);
+    }, 500);
   }
   );
 }
-
 
 
 let agentImage = [{ name: "cutejett", count: 0 }, { name: "reyna", count: 0 },
@@ -111,7 +110,7 @@ let backFace = document.getElementsByClassName('back');
 backFace = Array.from(backFace);
 backFace.forEach(randomAgent);
 
-function randomAgent(items) {
+function randomAgent(items, key) {
   let randomKey = Math.floor(Math.random() * agentImage.length);
   let randomImage = agentImage[randomKey];
   let url = `url("/images/${randomImage.name}.jpg")`;
@@ -123,4 +122,5 @@ function randomAgent(items) {
   if (randomImage.count === 2)
     agentImage.splice(randomKey, 1);
 }
+
 
