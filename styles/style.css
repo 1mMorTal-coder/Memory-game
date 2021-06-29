@@ -189,3 +189,28 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 1400px) {
+  .container {
+    width: 680px;
+    height: 552px;
+  }
+  .score {
+    top: 120px;
+    right: 10px;
+    width: 200px;
+    font-size: 2rem;
+  }
+  .time {
+    color: #4b0a0a;
+    bottom: 160px;
+    right: 10px;
+    font-size: 1.8rem;
+  }
+  .moves {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
+    font-size: 1.8rem;
+  }
+}
