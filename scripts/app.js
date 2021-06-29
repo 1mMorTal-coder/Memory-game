@@ -96,6 +96,7 @@ function getScore() {
     message.style.transform = 'translateY(500px) scale(0)';
     setTimeout(() => {
       scoreCard.classList.toggle('visible'); location.reload();
+      return false;
     }, 800);
   }
   );
