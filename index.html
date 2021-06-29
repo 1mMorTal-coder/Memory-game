@@ -7,11 +7,33 @@
   <title>Flip card Game</title>
   <link rel="stylesheet" href="/styles/style.css">
 </head>
-<body>
-  <div class="container">
-    <div class="boxes "id="1" >
-      <div class="front"></div>
-      <div class="back"></div>
+  <div class="section">
+    <h1>Memory Game</h1>
+    <div class="container">
+      <div class="boxes "id="1" >
+        <div class="front"></div>
+        <div class="back"></div>
+      </div>
+    </div>
+  </div>
+  <div class="score">
+    <p>High Score</p>
+    <p></p>
+  </div>
+  <div class="moves">
+    <p>Moves</p>
+    <p>0</p>
+  </div>
+  <div class="time">
+    <p>Time elapsed</p>
+    <p>0</p>
+  </div>
+  <div class="gameover visible">
+    <div class="background"></div>
+    <div class="message">
+      <p>Game Over !</p>
+      <p>Score : </p>
+    <button>Try Again</button>
     </div>
   </div>
   <script src="/scripts/app.js"></script>

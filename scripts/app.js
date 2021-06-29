@@ -5,19 +5,28 @@ for (let i = 2; i < 13; i++) {
 let boxes = document.getElementsByClassName('boxes');
 boxes = Array.from(boxes);
 
+let moves = document.querySelector('.moves > p:last-child');
+let timer;
 
-let flipCount = 0;
+if (localStorage.getItem("highScore") === null)
+  localStorage.setItem("highScore", "0");
+
+
+let flipCount = 0; let gameCount = 0;
 function flipEvent(e) {
-  flipCount++
+  if (flipCount === 0) {
+    timer = setInterval(timeUpdate, 1000); timeUpdate();
+  }
   if (acceptClick.length === 1) {
     if (this.getAttribute('id') === acceptClick[0].getAttribute('id'))
       return;
   }
+  flipCount++;
   this.rotate === 0 ? this.rotate = 180 : this.rotate = 0;
   this.style.transform = `rotateY(${this.rotate}deg)`;
   acceptClick.push(this);
+  moves.textContent = `${Math.floor(flipCount / 2)}`;
   flipCheck();
-  console.log(flipCount);
 }
 
 
@@ -28,7 +37,10 @@ function flipCheck() {
     if (agentOne === agentTwo) {
       acceptClick[0].removeEventListener("click", flipEvent);
       acceptClick[1].removeEventListener("click", flipEvent);
+      gameCount++;
       acceptClick.length = 0;
+      if (gameCount === 6)
+        gameOver();
     }
     else {
       acceptClick[0].rotate = 0; acceptClick[1].rotate = 0;
@@ -43,9 +55,6 @@ function flipCheck() {
   }
 }
 
-
-
-
 let acceptClick = [];
 function addEvent(items) {
   items.rotate = 0;
@@ -53,6 +62,44 @@ function addEvent(items) {
 }
 boxes.forEach(addEvent);
 
+let time = document.querySelector('.time > p:last-child');
+let timeElapsed = 0;
+function timeUpdate() {
+  time.textContent = `${timeElapsed}`;
+  timeElapsed++;
+}
+
+let localScore; let score = document.querySelector('.score > p:last-child');
+score.textContent = localStorage.getItem("highScore");
+function gameOver() {
+  clearInterval(timer);
+  localScore = Math.floor(time.textContent / moves.textContent * 100);
+  setTimeout(getScore, 500);
+}
+
+function getScore() {
+  let scoreCard = document.querySelector('.gameover');
+  let score = document.querySelector('.message p:nth-child(2)');
+  score.textContent = `Score : ${localScore}`;
+  let message = document.querySelector('.message ');
+  scoreCard.classList.toggle('visible');
+  message.style.transform = 'translateY(0px) scale(1)';
+  message.style.opacity = '1';
+
+  if (localScore > Number(localStorage.getItem("highScore"))) {
+    localStorage.setItem("highScore", `${localScore}`);
+    score.textContent = localStorage.getItem("highScore");
+  }
+  let btn = document.querySelector('.gameover button');
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    message.style.transform = 'translateY(500px) scale(0)';
+    setTimeout(() => {
+      scoreCard.classList.toggle('visible'); location.reload();
+    }, 800);
+  }
+  );
+}
 
 
 
@@ -75,5 +122,4 @@ function randomAgent(items) {
   if (randomImage.count === 2)
     agentImage.splice(randomKey, 1);
 }
-
 
