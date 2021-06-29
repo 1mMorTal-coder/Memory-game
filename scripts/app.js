@@ -73,7 +73,7 @@ let localScore; let score = document.querySelector('.score > p:last-child');
 score.textContent = localStorage.getItem("highScore");
 function gameOver() {
   clearInterval(timer);
-  localScore = Math.floor(time.textContent / moves.textContent * 100);
+  localScore = Math.floor(moves.textContent / time.textContent * 100);
   setTimeout(getScore, 500);
 }
 
