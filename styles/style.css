@@ -166,18 +166,23 @@ body {
   border-radius: 6px;
   height: 35px;
   font-size: 1.5rem;
-  background-color: #fe6262;
   background-color: #f3643f;
   color: white;
   margin-top: -10px;
   font-weight: 500;
+  transition: 0.1s ease-in-out;
+}
+
+.message button:hover {
+  transform: scale(1.02);
+  font-size: 1.51rem;
 }
 
 .gameover .background {
   position: absolute;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px) grayscale(0.1);
 }
 
 .visible {
@@ -185,7 +190,7 @@ body {
 }
 
 .message {
-  transform: translateY(-500px) scale(0);
+  transform: translateY(-700px) scale(0);
   opacity: 0;
   transition: 0.3s ease-in-out;
 }

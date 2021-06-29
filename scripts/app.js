@@ -95,8 +95,8 @@ function getScore() {
     e.preventDefault();
     message.style.transform = 'translateY(500px) scale(0)';
     setTimeout(() => {
-      scoreCard.classList.toggle('visible'); location.reload();
-      return false;
+      location.reload();
+      setTimeout(() => scoreCard.classList.toggle('visible'), 100);
     }, 800);
   }
   );
