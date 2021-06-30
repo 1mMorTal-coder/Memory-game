@@ -182,6 +182,7 @@ body {
   .container {
     width: 680px;
     height: 552px;
+    margin-bottom: -60px;
   }
   .score {
     top: 120px;
@@ -191,13 +192,13 @@ body {
   }
   .time {
     color: #4b0a0a;
-    bottom: 160px;
+    bottom: 100px;
     right: 10px;
     font-size: 1.8rem;
   }
   .moves {
     position: absolute;
-    bottom: 150px;
+    bottom: 100px;
     left: 10px;
     font-size: 1.8rem;
   }

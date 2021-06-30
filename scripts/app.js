@@ -5,6 +5,8 @@ for (let i = 2; i < 13; i++) {
 let boxes = document.getElementsByClassName('boxes');
 boxes = Array.from(boxes);
 
+let time = document.querySelector('.time > p:last-child');
+let score = document.querySelector('.message p:nth-child(2)');
 let moves = document.querySelector('.moves > p:last-child');
 let timer;
 let message = document.querySelector('.message ');
@@ -13,17 +15,23 @@ let scoreCard = document.querySelector('.gameover');
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   message.style.transform = 'translateY(500px) scale(0)';
-  scoreCard.classList.toggle('visible');
+  setTimeout(() => {
+    scoreCard.classList.toggle('visible');
+  }, 500);
+  time.textContent = `${0}`;
+  moves.textContent = `${0}`;
 }
 );
 
+if (localStorage.getItem("highScore") === null)
+  localStorage.setItem("highScore", "0");
+
+let highScoreUpdate = document.querySelector('.score > p:last-child');
+highScoreUpdate.textContent = localStorage.getItem("highScore");
 
 function restart() {
-  if (localStorage.getItem("highScore") === null)
-    localStorage.setItem("highScore", "0");
 
-
-  let flipCount = 0; let gameCount = 0;
+  let flipCount = 0, gameCount = 0;
   function flipEvent(e) {
     if (flipCount === 0) {
       timer = setInterval(timeUpdate, 1000); timeUpdate();
@@ -36,7 +44,7 @@ function restart() {
     this.rotate === 0 ? this.rotate = 180 : this.rotate = 0;
     this.style.transform = `rotateY(${this.rotate}deg)`;
     acceptClick.push(this);
-    moves.textContent = `${Math.floor(flipCount / 2)}`;
+    moves.textContent = `${Math.floor(flipCount / 2)} `;
     flipCheck();
   }
 
@@ -74,35 +82,35 @@ function restart() {
   }
   boxes.forEach(addEvent);
 
-  let time = document.querySelector('.time > p:last-child');
   let timeElapsed = 0;
   function timeUpdate() {
-    time.textContent = `${timeElapsed}`;
+    time.textContent = `${timeElapsed} `;
     timeElapsed++;
   }
 
-  let localScore; let score = document.querySelector('.score > p:last-child');
-  score.textContent = localStorage.getItem("highScore");
+  let localScore;
   function gameOver() {
     clearInterval(timer);
+
     localScore = Math.floor(moves.textContent / time.textContent * 100);
+    console.log(`Score: ${localScore}`);
+    score.textContent = `Score: ${localScore}`;
     setTimeout(getScore, 500);
   }
 
   function getScore() {
-    let score = document.querySelector('.message p:nth-child(2)');
-    score.textContent = `Score : ${localScore}`;
     scoreCard.classList.toggle('visible');
-    message.style.transform = 'translateY(0px) scale(1)';
+    setTimeout(() => {
+      message.style.transform = 'translateY(0px) scale(1)';
+      restart();
+    }, 100);
     message.style.opacity = '1';
-
     if (localScore > Number(localStorage.getItem("highScore"))) {
-      localStorage.setItem("highScore", `${localScore}`);
-      score.textContent = localStorage.getItem("highScore");
+      localStorage.setItem("highScore", `${localScore} `);
+      highScoreUpdate.textContent = localStorage.getItem("highScore");
     }
-    restart();
-  }
 
+  }
 
 
   let agentImage = [{ name: "cutejett", count: 0 }, { name: "reyna", count: 0 },
@@ -124,6 +132,8 @@ function restart() {
     if (randomImage.count === 2)
       agentImage.splice(randomKey, 1);
   }
+
+
 }
 
 
