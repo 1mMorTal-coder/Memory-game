@@ -56,7 +56,6 @@ body {
 .boxes {
   transform-style: preserve-3d;
   position: relative;
-  cursor: pointer;
 }
 .boxes > * {
   width: 100%;
@@ -64,7 +63,6 @@ body {
   color: white;
   font-size: 1rem;
   position: absolute;
-  cursor: pointer;
 }
 .boxes .back {
   // background:red;
@@ -73,7 +71,6 @@ body {
   background-position: center;
   background-size: 100% 100%;
   transform: rotatey(180deg);
-  cursor: pointer;
 }
 .score {
   position: absolute;
