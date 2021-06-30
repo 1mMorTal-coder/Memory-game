@@ -102,7 +102,7 @@ function restart() {
     clearInterval(timer);
 
     localScore = Math.floor(moves.textContent / time.textContent * 100);
-    score.textContent = `Score: ${localScore}`;
+    score.firstElementChild.textContent = `${localScore}`
     setTimeout(getScore, 500);
   }
 
