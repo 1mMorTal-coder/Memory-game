@@ -40,7 +40,7 @@ function restart() {
   let flipCount = 0, gameCount = 0;
   function flipEvent(e) {
     if (flipCount === 0) {
-      timer = setInterval(timeUpdate, 1000); timeUpdate();
+      timer = setInterval(timeUpdate, 500); timeUpdate();
     }
     if (acceptClick.length === 1) {
       if (this.getAttribute('id') === acceptClick[0].getAttribute('id'))
@@ -60,8 +60,8 @@ function restart() {
       let agentOne = acceptClick[0].children[1].dataset.name;
       let agentTwo = acceptClick[1].children[1].dataset.name;
       if (agentOne === agentTwo) {
-        acceptClick[0].removeEventListener("click", flipEvent);
         acceptClick[1].removeEventListener("click", flipEvent);
+        acceptClick[0].removeEventListener("click", flipEvent);
         gameCount++;
         acceptClick.length = 0;
         if (gameCount === 6)
