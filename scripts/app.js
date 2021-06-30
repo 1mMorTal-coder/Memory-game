@@ -15,7 +15,9 @@ let scoreCard = document.querySelector('.gameover');
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   message.style.transform = 'translateY(500px) scale(0)';
+
   setTimeout(() => {
+    message.style.transform = 'translateY(-700px) scale(0)';
     scoreCard.classList.toggle('visible');
   }, 500);
   time.textContent = `${0}`;
