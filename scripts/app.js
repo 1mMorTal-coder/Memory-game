@@ -109,7 +109,7 @@ function restart() {
     restart();
     setTimeout(() => {
       message.style.transform = 'translateY(0px) scale(1)';
-    }, 500);
+    }, 400);
     message.style.opacity = '1';
     if (localScore > Number(localStorage.getItem("highScore"))) {
       localStorage.setItem("highScore", `${localScore} `);
