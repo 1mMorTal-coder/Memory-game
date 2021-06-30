@@ -5,6 +5,10 @@ for (let i = 2; i < 13; i++) {
 let boxes = document.getElementsByClassName('boxes');
 boxes = Array.from(boxes);
 
+if (document.querySelector('body').offsetHeight <= 670) {
+  document.querySelector('.score').style.top = '60px';
+}
+
 let time = document.querySelector('.time > p:last-child');
 let score = document.querySelector('.message p:nth-child(2)');
 let moves = document.querySelector('.moves > p:last-child');
