@@ -6,7 +6,10 @@ let boxes = document.getElementsByClassName('boxes');
 boxes = Array.from(boxes);
 
 if (document.querySelector('body').offsetHeight <= 670) {
-  document.querySelector('.score').style.top = '50px';
+  document.querySelector('.score').style.top = '55px';
+}
+if (document.querySelector('body').offsetHeight >= 800) {
+  document.querySelector('.score').style.top = '150px';
 }
 
 let time = document.querySelector('.time > p:last-child');
@@ -99,7 +102,6 @@ function restart() {
     clearInterval(timer);
 
     localScore = Math.floor(moves.textContent / time.textContent * 100);
-    console.log(`Score: ${localScore}`);
     score.textContent = `Score: ${localScore}`;
     setTimeout(getScore, 500);
   }

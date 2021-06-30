@@ -53,7 +53,6 @@ body {
 
 .boxes {
   transform-style: preserve-3d;
-  position: relative;
 }
 
 .boxes > * {
@@ -248,13 +247,13 @@ body {
   }
   .time {
     color: #4b0a0a;
-    bottom: 10px;
+    bottom: 25px;
     right: 5px;
     font-size: 1.1rem;
   }
   .moves {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 5px;
     font-size: 1.1rem;
   }

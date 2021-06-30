@@ -45,6 +45,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 3px 3px;
+  //position: relative;
 }
 .boxes {
   background-image: url("/images/valorant.png");
@@ -55,7 +56,7 @@ body {
 }
 .boxes {
   transform-style: preserve-3d;
-  position: relative;
+  //position: relative;
 }
 .boxes > * {
   width: 100%;
@@ -230,13 +231,13 @@ body {
   }
   .time {
     color: #4b0a0a;
-    bottom: 10px;
+    bottom: 25px;
     right: 5px;
     font-size: 1.1rem;
   }
   .moves {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 5px;
     font-size: 1.1rem;
   }
