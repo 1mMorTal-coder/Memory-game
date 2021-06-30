@@ -6,7 +6,7 @@ let boxes = document.getElementsByClassName('boxes');
 boxes = Array.from(boxes);
 
 if (document.querySelector('body').offsetHeight <= 670) {
-  document.querySelector('.score').style.top = '60px';
+  document.querySelector('.score').style.top = '50px';
 }
 
 let time = document.querySelector('.time > p:last-child');
