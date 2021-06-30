@@ -261,7 +261,7 @@ body {
   .message {
     position: absolute;
     width: 90%;
-    height: 150px;
+    height: 170px;
   }
   .message p:first-child {
     font-size: 2.2rem;
