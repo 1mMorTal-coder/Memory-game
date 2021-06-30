@@ -54,6 +54,7 @@ body {
 .boxes {
   transform-style: preserve-3d;
   position: relative;
+  cursor: pointer;
 }
 
 .boxes > * {
@@ -62,6 +63,7 @@ body {
   color: white;
   font-size: 1rem;
   position: absolute;
+  cursor: pointer;
 }
 
 .boxes .back {
