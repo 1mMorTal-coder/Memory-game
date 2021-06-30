@@ -220,3 +220,40 @@ body {
     font-size: 1.8rem;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+    height: 430px;
+    margin: 0;
+  }
+  .boxes {
+    background-image: url("/images/valorant.png");
+    background-position: bottom -20px center;
+    background-size: 160% 100%;
+    background-attachment: fixed;
+  }
+  .section > h1 {
+    font-size: 2.5rem;
+    margin-top: -20px;
+    color: #0e3970;
+  }
+  .score {
+    top: 100px;
+    right: 5px;
+    width: 200px;
+    font-size: 1.8rem;
+  }
+  .time {
+    color: #4b0a0a;
+    bottom: 10px;
+    right: 5px;
+    font-size: 1.8rem;
+  }
+  .moves {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 1.8rem;
+  }
+}

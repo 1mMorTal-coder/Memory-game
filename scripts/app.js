@@ -134,8 +134,6 @@ function restart() {
     if (randomImage.count === 2)
       agentImage.splice(randomKey, 1);
   }
-
-
 }
 
 
