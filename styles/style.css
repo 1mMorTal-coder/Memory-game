@@ -260,15 +260,16 @@ body {
   }
   .message {
     position: absolute;
-    width: 50%;
+    width: 90%;
     height: 220px;
   }
   .message p:first-child {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: -10px;
   }
   .message p:nth-child(2) {
     margin-top: -30px;
+    font-size: 1.3rem;
   }
   button {
     width: 120px;
