@@ -21,7 +21,7 @@ btn.addEventListener('click', (e) => {
   message.style.transform = 'translateY(500px) scale(0)';
 
   setTimeout(() => {
-    message.style.transform = 'translateY(-700px) scale(0)';
+    message.style.transform = 'translateY(-900px) scale(0)';
     scoreCard.classList.toggle('visible');
   }, 500);
   time.textContent = `${0}`;
@@ -106,10 +106,10 @@ function restart() {
 
   function getScore() {
     scoreCard.classList.toggle('visible');
+    restart();
     setTimeout(() => {
       message.style.transform = 'translateY(0px) scale(1)';
-      restart();
-    }, 100);
+    }, 500);
     message.style.opacity = '1';
     if (localScore > Number(localStorage.getItem("highScore"))) {
       localStorage.setItem("highScore", `${localScore} `);
