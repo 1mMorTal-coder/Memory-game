@@ -242,14 +242,14 @@ body {
   }
   .message {
     position: absolute;
-    width: 90%;
+    width: 50%;
     height: 220px;
   }
-  p:first-child {
+  .message p:first-child {
     font-size: 1.5rem;
     margin-top: -10px;
   }
-  p:nth-child(2) {
+  .message p:nth-child(2) {
     margin-top: -30px;
   }
   button {
