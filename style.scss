@@ -1,7 +1,5 @@
 // if nothing is passed as  a parameter of @include display-flex;
 // then the default value i.e. row will be the value of $direction
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital@1&family=Source+Code+Pro&display=swap");
 @mixin display-flex($direction: row) {
   display: flex;
   align-items: center;
