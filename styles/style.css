@@ -46,6 +46,7 @@ body {
   background-position: bottom -20px center;
   background-size: auto 100%;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
   transition: 0.3s ease-in-out;
 }
 
@@ -59,6 +60,7 @@ body {
   color: white;
   font-size: 1rem;
   position: absolute;
+  backface-visibility: hidden;
 }
 
 .boxes .back {
