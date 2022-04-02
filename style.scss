@@ -1,4 +1,4 @@
-// if nothing is passed as  a parameter of @include display-flex;
+// if nothing is passed as a parameter of @include display-flex;
 // then the default value i.e. row will be the value of $direction
 @mixin display-flex($direction: row) {
   display: flex;
@@ -46,16 +46,17 @@ body {
   //position: relative;
 }
 .boxes {
+  // background-position: bottom -20px center;
+  background-position: center center;
   background-image: url("/images/valorant.png");
-  background-position: bottom -20px center;
   background-size: auto 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-background-attachment: fixed;
   transition: 0.3s ease-in-out;
-}
-.boxes {
   transform-style: preserve-3d;
-  //position: relative;
+  cursor: pointer;
 }
 .boxes > * {
   width: 100%;
